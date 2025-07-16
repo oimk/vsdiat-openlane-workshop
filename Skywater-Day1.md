@@ -5,11 +5,9 @@ Going from assembly language architecture to something the hardware can understa
 - Intel Chips: x86/x64/x32 architectures  
 - RISC-V architectures used for specific chips that can understand RISC-V  
 
-Simplified RTL to GDSII flow (HDL language to a file format than can be manufactured in a foundry):  
-![][image1]
-
 Full openlane ASIC flow chart. Note: OpenLane is fully automated and can require no human input in the OpenRoad part. There is a possibility for interactive mode with commands to control the ASIC design flow but no specific specification needs to put stuff on chips.  
-![][image2]
+<img width="1787" height="781" alt="Screenshot 2025-07-16 001314" src="https://github.com/user-attachments/assets/c81f4e7c-0d62-4496-ae86-31013bf76fcf" />
+
 
 [https://www.youtube.com/live/EczW2IWdnOM?si=5d2mLJYNQx8F5o8u](https://www.youtube.com/live/EczW2IWdnOM?si=5d2mLJYNQx8F5o8u)   
 [https://www.youtube.com/live/Vhyv0eq\_mLU?si=T1sAK3iZwZYvOXp7](https://www.youtube.com/live/Vhyv0eq_mLU?si=T1sAK3iZwZYvOXp7) 
