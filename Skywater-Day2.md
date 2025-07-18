@@ -34,10 +34,28 @@ To see the specific modification applied to the design after run_synthesis based
 ```bash 
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 ```
-The above is specific to my directory so change the paths to the file with your own specific path. The output should result in this:
+The above is specific to my directory so change the paths to the file with your own specific path.  
+
+The output should result in this:
 <img width="843" height="917" alt="image" src="https://github.com/user-attachments/assets/b5368229-b285-4aec-8cb8-54682cfaf142" />
 <figcaption> Use s to select, v to center, z to zoom in, and shift z to zoom out. To zoom to a specific location, first press the left mouse key and then the right mouse key. </figcaption>
 At the bottom right of the chip, we see the unplaced standard cells. You can use hover over the object and press s to select the object and in the white magic terminal type what to determine what is it. 
 <img width="857" height="842" alt="image" src="https://github.com/user-attachments/assets/788323b2-f5d9-4309-908a-d7cc892045ef" />
+
+# Placement of standard cells 
+In this step, the goal is to convert what we have in the netlist into physical cells that are in the core of the die. This steps happens after run_floorplan and happens after every critical component is placed. This step places the remaining logic gates that are required to give the chip functionality. (Note: Even after this step is completed, the wiring has not been done yet so the chip is not yet functional).
+
+For now here is some important terminology:  
+--> Library: is a database that specifices all the logic gates used in to give functionality to a chip. The library also contains infomration about the timing specification of differnet logic gates and different versions of the same logic gates with the same functionality but different timing specifications. 
+<img width="946" height="455" alt="image" src="https://github.com/user-attachments/assets/5406000d-a2b8-4267-a83b-381bbf62d2aa" />
+
+
+## Step 1: Netlist --> Physical Cells 
+This step convert a netlist into physicals cells through the library. Each gate in the netlist (AND gate, Or gate, etc.) is given a specific shape and size through the library and readyto be placed down into the core of the die.
+
+## Step 2: Optimize placing 
+This step optimizes the placement of cells that connects each circuit to it's respective input and output based on the netlist. Some cells are placed close to each other than others because their circuits may require higher clock speeds. It is important to note that the farther away a cell is from it's input or output the more the signal gets distorted. Thus, wire length and capacitance are estimated (without placing them down) and are used to determine the placement of optional repeater. Repeaters (buf in the diagram below) lowers the distance a signal has to travel and maintains it's original signal strength so that the some circuits can function propertly. 
+<img width="1919" height="964" alt="image" src="https://github.com/user-attachments/assets/5b438f4d-b72d-4f44-a963-a3e788cf1e67" /><figcaption>Image from VSDIAT course & taken from lecture. Ignore arrows</figcaption>
+
 
 
