@@ -58,4 +58,11 @@ This step optimizes the placement of cells that connects each circuit to it's re
 <img width="1919" height="964" alt="image" src="https://github.com/user-attachments/assets/5b438f4d-b72d-4f44-a963-a3e788cf1e67" /><figcaption>Image from VSDIAT course & taken from lecture. Ignore arrows</figcaption>
 
 
+## Running Placement of the cells.
+In the docker image, run this command after running the floorplan command: *run_placement*. This will move the standard cells we saw in the floorplacement magic into the core of the die. 
+
+The result should look like the image below. Run the same magic command stated above in the same directory. 
+<img width="513" height="564" alt="image" src="https://github.com/user-attachments/assets/33f1b693-0b76-4bd5-b149-a4a81a0899ab" />
+
+
 
