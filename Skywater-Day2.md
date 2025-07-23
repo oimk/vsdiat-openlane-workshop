@@ -81,7 +81,7 @@ The flow goes in terms of the following:
 - Step 2: Read the .cir file
 - Step 3: Understand the functionality of the circuit.
 - Step 4: Read any subcircuits specificied in the .cir file
-- Step 5: Attack neccessary power sources.
+- Step 5: Attach neccessary power sources.
 - Step 6: Apply the stimulus (ususally a pulse voltage).
 - Step 7: Provide the output capactiance.
 - Step 8: Provide the stimulation command.
