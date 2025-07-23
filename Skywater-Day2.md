@@ -70,27 +70,32 @@ This process describes how a an EDA tool like magic is able to understand the ce
 The cell design work flow steps:
 --> Step 1: Input the PDK specifications which inculdes the DRC and LVS specifications for the specific foundry and the Spice modules. Input the Library and the User defined specification in config
 --> Step 2: Design the circuit layout using the PDK specifications, user specification, and the library specification. Use the circuit layout to generate the layout design in the form of a stick diagram and charactarize it using the PDK specifications (DRC + LVS) so that the design is legal. 
---> Outputs: CDL (Circuit design language) generated from the circuit layout, GDSII file generated from the finished characterized layout, LEF file for the size of the die generated from the specific user specifications, and the .cir (extracted spice netlist) file from the circuit layout to specify the resistance and capacitance of each individual part. 
+--> Outputs: CDL (Circuit design language) generated from the circuit layout, GDSII file generated from the finished characterized layout, LEF file for the size of the die generated from the specific user specifications, and the .cir (extracted spice netlist) file from the circuit layout to specify the resistance and capacitance of each individual part.   
+
 <img width="692" height="953" alt="image" src="https://github.com/user-attachments/assets/2e298600-937b-48a0-8c6f-012fbc1ca28b" /><figcaption>Image from VSDIAT course & taken from lecture.</figcaption>
 
-#Charactarization step deepdive
+# Charactarization step deepdive
 In the charactarization step, the inputs contain the following: Circuit layout, description of the cells via the spice modules, spice extracted netlist with descripiton of the entire circuit layout.
-The flow goes in terms of the following: 
---> Step 1: Read spice specification of the individual cells. 
---> Step 2: Read the .cir file 
---> Step 3: Understand the functionality of the circuit 
---> Step 4: Read any subcircuits specificied in the .cir file 
---> Step 5: Attack neccessary power sources
---> Step 6: Apply the stimulus (ususally a pulse voltage) 
---> Step 7: Provide the output capactiance 
---> Step 8: Provide the stimulation command 
+The flow goes in terms of the following:       
+- Step 1: Read spice specification of the individual cells.       
+- Step 2: Read the .cir file
+- Step 3: Understand the functionality of the circuit.
+- Step 4: Read any subcircuits specificied in the .cir file
+- Step 5: Attack neccessary power sources.
+- Step 6: Apply the stimulus (ususally a pulse voltage).
+- Step 7: Provide the output capactiance.
+- Step 8: Provide the stimulation command.
+
 The former will then be inputed into the program called "GUNA" that will generate a model of the specific circuit with the timing , noise, power specification in .libs files. 
 
-#Timing Characterization + Proporgation delay.
+# Timing Characterization + Proporgation delay.
 Some important terminology:
+
 Slew: How much time does it take for an input to change from 1-0 or 0-1. 
-Takening 7 inputs from the following image below, the variables specific the threshold value (20% of the line going up or going down depending on if the variable name is rise or fall) between two components. The in and out threshold values are from the input and output of the circuit. 
+Takening 7 inputs from the following image below, the variables specific the threshold value (20% of the line going up or going down depending on if the variable name is rise or fall) between two components. The in and out threshold values are from the input and output of the circuit.   
+
 <img width="340" height="378" alt="image" src="https://github.com/user-attachments/assets/e9afd673-bf1f-42d1-a539-60379ed6bf23" />
+
 ## Caculation of proprogation + transistion delay
 The Progragation delay is how long it take for an input to be turn into an output. It is caculated using these formula: 
 --> Time(out-varaible) - Time (in-variable)(Note in and out has to match)
