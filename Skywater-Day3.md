@@ -35,51 +35,64 @@ To do a transient analysis, instead of applying a constant voltage, we input a p
 
 
 # 16-mask CMOS process
-Step 1: Selecting the substrate.
+Step 1: Selecting the substrate. Use a low doping level. 
 - Type, resistivity, doping level, orientation.
+- <img width="789" height="280" alt="image" src="https://github.com/user-attachments/assets/1d092bb2-6c52-4621-b657-02f17db22aea"/><figcaption>Image from VSDIAT course & taken from lecture.</figcaption>
 
-Step 2: Create active region via isolation for transistors.
-- Step a: Add base layers on top of substrate (SiO2, Si3N) and photoresist.
+Step 2: Create active region via isolation for transistors. (1 mask used)
+- Step a: Add base layers on top of substrate (SiO2, Si3N4) and photoresist.
 - Step b: Add mask and shine UV light on top of the mask that removes the exposed photoresist.
 - Step c: Etech off exposed Si3N and after remove photoresist.
-- Step d: Heat up in oxidation furance that grows the exposed SiO2 while other SiO2 are covered by Si3N. Process called Local Oxidation for silicon (LOCOS). Creates Isolation areas.
-- Step e: Etch remaining Si3N.
+- Step d: Heat up in oxidation furance that grows the exposed SiO2 while other SiO2 are covered by Si3N. Process called Local Oxidation for silicon (LOCOS). Creates isolation regions.
+- Step e: Remove remaining Si3N4 using phosphoric acid.
+<img width="1897" height="774" alt="image" src="https://github.com/user-attachments/assets/beaea84f-cc42-4656-b4c1-efe765fc66cc" /><figcaption>Image from VSDIAT course & taken from lecture.</figcaption>
 
-Step 3: N-Well and P-Well Formation.
+Step 3: N-Well and P-Well Formation. (2 Mask Used)
 - Step a: Add photoresists and mask to specific locations.
 -  Step b: Shine UV light and remove mask after.
--   Step c: Ion implantation of Boron to create p-well in P-substrate in the expose side with no photoresist.  ~ 200keV (damages Si02)
+-   Step c: Ion implantation of Boron to create p-well in P-substrate in the expose side with no photoresist.  ~ 200keV (damages SiO2)
 - Step d: repeat A-B on the p-well side.
-- Step e: Add phosphorous for n-well.   ~200 kEV (damages Si02)
+- Step e: Add phosphorous to make n-well. ~200 kEV (damages SiO2)
 - Step f: Place in a high temperature furance to form deep N-well and P-well through diffusion of phosphrous and boron respectively.
+<img width="839" height="356" alt="image" src="https://github.com/user-attachments/assets/c537d0f2-403b-4eea-9b1d-6232ea4c6f24"/><figcaption>Image from VSDIAT course & taken from lecture.</figcaption>
+
   
-Step 4: Formation of the gate
+Step 4: Formation of the gate (3 Mask Used)
 - Step a: Step 3a-3b and implant Boron to the p-well side at the surface of the substrate (under SiO2) with low energy ~60keV. Remove photoresist.
-- Step b: Repeat for the n-well using Arsenic or Phosorous
+- Step b: Repeat step a for the n-well using Arsenic or Phosorous
 - Step c: Use HF solution to etch damaged Si02 and regrown with high quality SiO2
 - Step d: Add Polysilicion layer (Doped for phosphorous for low gate resistance) on top of newly formed SIO2
 - Step e: Repeat 3a-3b to to create 2 pillars of photoresist above polysillicon layer in the n-well and p-well sections.
-- Step f: Etch polysillicon not covered by photoresist and remove photoresist after. (The result should be a area of polysillicon above the SiO2 layer in both of the wells)
+- Step f: Etch polysillicon not covered by photoresist and remove photoresist after.(The result should be a area of polysillicon above the SiO2 layer in both of the wells)
 
-Step 5: Lighly dope drain (LDD) formation
-- Step a: Repeat 3a-3b with the exposed side in the p_well and add phosorous to creata a lighly doped N- implant on the inside of the lighly doped p implant inside the p-well ionside hte p-substrate between both sides of the polysilicon strip in the p-well
-- Step b: Repeat a but using Boron. Creating a P- implant.
+<img width="694" height="315" alt="image" src="https://github.com/user-attachments/assets/ece8ddfb-9481-4259-a4e0-68ad42177f52"/><figcaption>Image from VSDIAT course & taken from lecture.</figcaption>
+
+
+Step 5: Lighly dope drain (LDD) formation (2 Mask Used)
+- Step a: Repeat 3a-3b with the exposed side in the p_well and add phosorous to creata a lighly doped N- implant on the inside of the lighly doped p implant.
+- Step b: Repeat a but using Boron, creating a P- implant inside the lightly doped N implant. 
 - Step c: Create side-wall spaces using a thick layer of SIO3 or Si3N and etching down to the P- implant inside the P-substrate expect on the sides of the polysilicon strip.
+<img width="779" height="365" alt="image" src="https://github.com/user-attachments/assets/f8159206-e91e-4e1b-9c78-32597c5db039"/><figcaption>Image from VSDIAT course & taken from lecture.</figcaption>
 
-Step 6: Source and drain formation
+
+Step 6: Source and drain formation (2 mask)
 - Step a: Add small layer of screen oxide ontop of the p-implant/n-plant to prevent channling.
 - Step b: Repeat step 3a-3b. Exposed side is the n-implant/p-well side. Turns the n- implants to a strong n+ implant. Remaining n-implant hides under the sidewall space near the polysilicon strip.
 - Step c: Repeat but add Boron to the p-/n-well side creating a p+ implant. Same structure layout.
 - Step d: Place in a high temperature furance to anneal (develop and diffuse).
+<img width="691" height="324" alt="image" src="https://github.com/user-attachments/assets/8d22f9e6-83c8-4706-84b4-dc7c2d9e4fdd"/><figcaption>Image from VSDIAT course & taken from lecture.</figcaption>
 
-Step 7: Step to form contact and interconnects (local)
-- Step a: remove HF solution.
-- Step b:Deposite titanium on wafer surface using sputtering.
-- Step c: Heat in 600-700C in N2 for 60 sec to create TiSi2 (low resistanct; in contact with silicon when in oven)or TiN (used in local communication).
+
+Step 7: Step to form contact and interconnects (local) (1 mask used)
+- Step a: Remove oxide using HF solution.
+- Step b: Deposite titanium on wafer surface using sputtering.
+- Step c: Heat in 600-700C in nitrogen gas for 60 sec to create TiSi2 (low resistanct; in contact with silicon when in oven)or TiN (used in local communication).
 - Step d: Step 3a-3b (Specific locations ontop of the reacted TiN layer).
 - Step e: Etch off exposed TiN to create specfic location communication using RCA cleaning. Remove photoresist after.
+<img width="725" height="343" alt="image" src="https://github.com/user-attachments/assets/be3c4411-b8a1-4f2a-885a-adab19077199"/><figcaption>Image from VSDIAT course & taken from lecture.</figcaption>
 
-Step 8: Higher level metal formation:
+
+Step 8: Higher level metal formation: (5 mask used)
 - Step a: Add thick layer of SiO2
 - Step b: Chemical Mechanical polishing (CMP) to make the SiO2 layer flat with no hill or bumps
 - Step c: Step 3a-3b and etch exposed layers (thorugh SiO2) and remove photoresist after.
@@ -87,10 +100,11 @@ Step 8: Higher level metal formation:
 - Step e: Add tungsten and use CMP to cut excess down.
 - Step f: Add aluminum layer and repeat step 3a-3b down to the CMP level in step e. Remove photoresist (Aluminum is a on the SiO2 layer)
 - Step g: Deposit more Sio2 and repeat step3a-3b to makes holes down to the aluminum.
-- Step h: add TiN and tungsten on top of aluminum using step8a-8e
+- Step h: add TiN and tungsten on top of aluminum using step 8d-8e
 - Step i: Add aluminum layer on top and use step3a-3b to make a hole down to the second SI02 layer with aluminum on top at specifc locations
 - Step k: Add top dielectic to protect your chip;
 - Step z: Use the final mask to crete ports to interface with the electrical components.
+
 
 Final picture of the CMOS:
 <img width="1409" height="983" alt="image" src="https://github.com/user-attachments/assets/3558fb23-0af0-4594-a32f-c63503e6a0ac" /><figcaption>Image from VSDIAT course & taken from lecture. Wood = SI02. Pink = aluminum. Blue with dots = tungsten. Lightblue = TIN. Red = polysilicion. Dark blue = Titanium. Green = Si3N4 or Sio2 </figcaption>
@@ -108,5 +122,31 @@ If you ever made and mistake in openlane or wish to change anything, Openlane al
 Step 1: Copy this github repository https://github.com/nickson-jose/vsdstdcelldesign.git using *git clone* command. This repository contains a inverter magic file desgin.
 Step 2: Copy the sky130A.tech file (path shown when using magic _T) into the new file that was clone on the computer.
 <img width="739" height="186" alt="image" src="https://github.com/user-attachments/assets/85133195-2b16-4597-a1fc-be1bcb1c43ca" />
-Step 3: Open the sky130_inv.mag file (the characterization of a inverter) using *magic -T sky130A.tech sky130_inv.mag*. You show see a k-map similar desgin: 
+Step 3: Open the sky130_inv.mag file (the characterization of a inverter) using *magic -T sky130A.tech sky130_inv.mag*. You should see the following
 <img width="731" height="762" alt="image" src="https://github.com/user-attachments/assets/d984b19b-a0d8-4b39-a7dd-aaf10912b778" />
+Step 4: Select on different parts of the desgin of the inveter using the keypress s and use the *what* command in the terminal to determine what each part is. 
+
+To add layers, select the part you want to add the layer to, move you're mosue to the layer type on the right, and then press the middle mouse button.
+
+## Spice extraction to netlist
+Step 1: Run *extract all* (To view the file location, type *pwd* and follow that path on the main terminal)   
+Step 2: Run *ext2spice Cthresh 0 Rthresh 0*   
+Step 3: Run *ext2spice*   
+Step 4: Go to where the file was created (view step 1) and run *nano sky130_inv.ext*    
+Step 5: To do transient analysis, we must add the dependicies files, power. ground and a pulse supply voltage. Add *.include ./libs/nshort.lib* and *./libs/pshort.lib* near *.option ...* and add *VDD VPWR 0 3.3V*, *VSS VGND 0.0V*, *Va A VGND PULSE(0V 3.3V 0 0.1ns 2ns 4ns)* in between *.subckt ... .ends* and *.trans 1n 20n* before *.end*   
+Step 6: Change *.end* to *//.end* and add the following:   
+ *.control*    
+ *run*   
+ *.endc*   
+ *.end*   
+<img width="878" height="598" alt="image" src="https://github.com/user-attachments/assets/cdc5f3db-ba03-43a2-b1df-a91ea89bc2c9" />
+Step 7: Run *ngspice sky130_inv.spice*
+<img width="744" height="773" alt="image" src="https://github.com/user-attachments/assets/2e21d533-01a7-44bd-baa3-868af31bb041" />
+Step 8: Caculate the progration delay (day 2) by zooming in using the right and left mouse button. 
+#Magic DRC Engine:
+Basics of Using magic and documentation can be found here: http://opencircuitdesign.com/magic/ 
+To find more information about the Google Skywater 130nm process and the PDk itself, information can be found in this link: https://skywater-pdk.readthedocs.io/en/main/
+
+
+
+
