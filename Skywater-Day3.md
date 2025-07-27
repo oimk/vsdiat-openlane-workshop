@@ -142,10 +142,25 @@ Step 6: Change *.end* to *//.end* and add the following:
 <img width="878" height="598" alt="image" src="https://github.com/user-attachments/assets/cdc5f3db-ba03-43a2-b1df-a91ea89bc2c9" />
 Step 7: Run *ngspice sky130_inv.spice*
 <img width="744" height="773" alt="image" src="https://github.com/user-attachments/assets/2e21d533-01a7-44bd-baa3-868af31bb041" />
-Step 8: Caculate the progration delay (day 2) by zooming in using the right and left mouse button. 
-#Magic DRC Engine:
-Basics of Using magic and documentation can be found here: http://opencircuitdesign.com/magic/ 
+Step 8: Caculate the rise/fall delay and the rise/fall transition delay (day 2) by zooming in using the right and left mouse button. 
+
+# Magic DRC Engine Excercise:
+Basics of using magic and documentation can be found here: http://opencircuitdesign.com/magic/ 
 To find more information about the Google Skywater 130nm process and the PDk itself, information can be found in this link: https://skywater-pdk.readthedocs.io/en/main/
+To download this lab excercise, download the file in this link inside linux and extract the file. http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz
+
+To start (inside drc_test directory):
+Step 1: Open the met3.mag file using magic. Make a box under the big Met3 correct by design m3.4 adn run *paint m3contact*. Then run *cif see VIA2*. The output should look like this.
+<img width="386" height="478" alt="image" src="https://github.com/user-attachments/assets/4ee727fd-f3e0-4111-be76-44c6fbf860a0" />
+Step 2: Load poly.mag. In poly.9, here is a rule violation that is not flagged by the magic tool. The spacing between the two polyres is smaller than 0.48 micron. You can check by using the *box* command in the terminal. 
+<img width="324" height="396" alt="image" src="https://github.com/user-attachments/assets/a858ccdf-736a-4572-a9ec-15c3fdb21ddf" />
+This can be changing using through this: 
+<img width="514" height="90" alt="image" src="https://github.com/user-attachments/assets/fcae4ed1-281a-4176-9831-c2f5b7216367" />
+<img width="681" height="147" alt="image" src="https://github.com/user-attachments/assets/90787248-5127-468b-ac67-1698d47a3dc4" />
+Step 3: Reload the tech file using *tech load sky130A.tech* and *drc check*. Then if you run drc check you should see an error.
+
+
+
 
 
 
