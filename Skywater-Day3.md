@@ -1,4 +1,37 @@
 # Spice simulation for circuit 
+In the previous day, we went over the theory on how to simulate the voltage transfer characteristics (VTC) in a hypotheical component. In this day, we are trying to do the same thing in realtime through spice simulations. But to do that we have to define the circuit first using the SPICE deck. 
+
+## Spice Deck
+Spice decks explain everything about the Spice deck. One of the descriptions is the component connectivity, which describes how different components like the PMOS and NMOS connect to each other, to VDD, to VSS. 
+
+<img width="301" height="389" alt="image" src="https://github.com/user-attachments/assets/453e174b-e09a-407c-964c-68c4cbc54018"/><figcaption>Image from VSDIAT course & taken from lecture. </figcaption>
+
+
+We also need to define the Component values, which describes the dimensions of a component. Below, both the PMOS and the NMOS have a channel width of 0.375 micron and a channel length of 0.25 micron. Ideally, the PMOS should have bigger values compared to the NMOS. Futher, we also define the voltage values of the gate and drain, which are 2.5V respectively.
+<img width="864" height="729" alt="image" src="https://github.com/user-attachments/assets/571d049e-6914-47c9-8ce2-a8c655ed8420" /><figcaption>Image from VSDIAT course & taken from lecture.</figcaption>
+
+In the Spice deck, we must define the nodes too. Nodes are two points where a component lies in between. Below, all the components lie between two nodes.
+<img width="406" height="363" alt="image" src="https://github.com/user-attachments/assets/75079b27-66dc-441a-b387-656abafea3f1" /><figcaption>Image from VSDIAT course & taken from lecture.</figcaption>
+
+Now we can start writing the Spice deck. The Spice deck describes the circuit. We write the connectivity, dimensions, component values of of each component into the file. Below, M1 and M2 are the names of the PMOS and NMOS respectively and the files describes the connectivity, type, and dimensions. Cload is the name of the output load capacitor and the file describes it's capacitance. Vdd and Vin are the name of the source and the drain and the file desribes it's connectivity and voltage. Then, we have the simulation commands. The file tells the input voltage, (Vin) to increase from 0 to 2.5 voltages with a rate of 0.05 volts. The last thing is to include the technological parameters of the specific compoment like the PMOS and the NMOS. 
+<img width="874" height="459" alt="image" src="https://github.com/user-attachments/assets/976db9f3-5c6e-4127-b1a3-d157049589e8"/><figcaption>Image from VSDIAT course & taken from lecture.</figcaption>
+
+## Spice Simulation
+To run the simulation you must: 
+1. Go to the file path where the souce file are stored using the cd command in the spice terminal
+2. Source the file and run it.
+3. Run set point and choose the right plot (DC transfer characteristics)
+4. Then run plot out vvs in
+
+By simulating differnet ratios for the dimension of the NMOS and PMOS, we achive the same shape but a different phase. Below, it is important to note the switching threshold, which is where Vin = Vout. For the left one, it switches at a voltage of 1, while for the right it switches at a voltage of 1.25. It is important to note that the dimensions of the channel in the MOSFETs are differnet in the left graph and the right graph. This means that the robustness these two differnet circuit with the variation in the ratio between the PMOS and the NMOS causes this differnet. 
+<img width="1900" height="919" alt="image" src="https://github.com/user-attachments/assets/680c1572-4659-4b5c-8449-2a67adccc977" /><figcaption>Image from VSDIAT course & taken from lecture.</figcaption>
+
+To do a transient analysis, instead of applying a constant voltage, we input a pulse voltage in the Spice file for Vin. Below, the graph the x axis is the time in ns, and the y axis is the voltage. To caculate the progation delay, compare the rise and fall time in the switching threshold when vin is falling and vout is rising and when vout is falling and vin is rising.
+<img width="543" height="419" alt="image" src="https://github.com/user-attachments/assets/985d4d48-3cd2-4061-a333-8a9897dd3a88" /><figcaption>Image from VSDIAT course & taken from lecture.</figcaption>
+
+
+   
+
 
 
 # 16-mask CMOS process
